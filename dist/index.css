@@ -12,12 +12,9 @@ html {
   	display: inline-block;
   	padding: 5px;
   	animation-name: arrow;
-  	transition-delay: 0.5s;
+  	/*transition-delay: 0.5s;*/
 }
-@keyframes arrow{
-	from {opacity: 0%;}
-	to {opacity: 100%;}
-}
+
 .up {
   	transform: rotate(-135deg);
   	-webkit-transform: rotate(-135deg);
@@ -130,8 +127,8 @@ html {
 	margin: 0px;
 }
 #new .row .card{
-	width: 350px;	
-	margin-left: 50px;
+	/*width: 350px;	*/
+	/*margin-left: 50px;*/
 	margin-top: 10px;
 }
 
@@ -168,7 +165,8 @@ html {
 	text-align: center;
 }
 #video  iframe{
-	width: 1100px;
+	width: 100%;
+	height: 600px;
 	padding-top: 50px;
 	text-align: center;
 	padding-bottom: 50px;
@@ -194,15 +192,7 @@ html {
 
 
 /*----------------------Start Background Image-----------------------*/	
-.paragraph {
-	position: absolute; 
-	top: 230px; 
-	left: 500px;
-	text-align: center;
-	color: black;	
-	font-weight: bold;
-}
-.bg-img .button {
+#bg-img .button {
 	background-color: black;
 	border: 1px solid rgba(0,0,0,0.3);
 	color: white;
@@ -213,20 +203,32 @@ html {
 	opacity: 0.5;
 	transition: 0.3s;
 }
-.bg-img .button:hover{
+#bg-img .button:hover{
 	background-color: black;
 	color: white;
 	opacity: 0.8;
 }
 
+#bg-img .container-fluid {
+	position: relative;
+  	text-align: center;
+  	color: white;
+}
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+/*
 .bg-img {
-	height: 600px;
+	height: 600px;*/
 		/*border: 2px solid black;*/
   	/*padding: 25px;*/
- 	background: url(../images/churchbg1.jpg);
+/* 	background: url(../images/churchbg1.jpg);
   	background-repeat: no-repeat;
-  	background-size: 1370px 600px;
-	}
-}
+  	background-size: 100%;
+	}*/
+/*}*/
 
 /*----------------------End Background Image-----------------------*/
