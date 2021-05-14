@@ -203,6 +203,9 @@ html {
 	opacity: 0.5;
 	transition: 0.3s;
 }
+#bg-img  img{
+	height: 600px;
+}
 #bg-img .button:hover{
 	background-color: black;
 	color: white;
