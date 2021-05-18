@@ -1,0 +1,149 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="dist/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="dist/index.css">
+	<link rel="stylesheet" type="text/css" href="dist/font-awesome.min.css">
+	<script src="dist/jquery.min.js"></script>
+	<script src="dist/bootstrap.min.js"></script>
+	<style type="text/css">
+
+	</style>
+</head>
+<body>
+	<!-- header start -->
+	<section>
+		<div class="container-fluid">
+		<button onclick="topFunction()" id="myBtn" title="Go to top"><i class="arrow up"></i></button>
+		<div>
+			<div id="header">
+				<nav class="navbar navbar-expand-lg navbar-light">
+			  	<a class="navbar-brand" href="#">
+			  		<img src="images/unnamed.jpg" style="width: 60px; height: 60px;">
+			  	</a>
+
+			  	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+			    	<span class="navbar-toggler-icon"></span>
+			  	</button>
+				  	<div class="collapse navbar-collapse" id="navbarNavDropdown">
+				    	<ul class="navbar-nav ml-auto">
+				      		<li class="nav-item active">
+				        		<a class="nav-link" href="index.html">Home</a>
+				      		</li>
+				      		<li class="nav-item">
+				        		<a class="nav-link" href="aboutus.html">About us</a>
+				      		</li>
+				      		<li class="nav-item">
+				        		<a class="nav-link" href="news.html">News</a>
+				      		</li>
+				      		<li class="nav-item">
+				        		<a class="nav-link" href="video.html">Video</a>
+				      		</li>
+				      		<li class="nav-item">
+				        		<a class="nav-link" href="contact.html">Contact</a>
+				      		</li>
+				    	</ul>
+				  	</div>
+				</nav>
+			</div>
+	</section>
+	<!-- End header -->
+	<!-- Start Background Image -->
+	<section id="bg-img">
+		<div class="container-fluid">
+		  <img src="images/churchbg1.jpg" alt="Snow" style="width:100%;">
+		  <div class="centered">
+		  	<h2><i>Welcome to our church!</i></h2>
+		  	<p><font size="10"><b>It's nice to meet you!</b></font></p>
+		  	<button class="button"><font size="5">button</font></button>
+		  </div>
+		</div>
+	</section>
+	<!-- End Background Image -->
+	<div class="container" align="center">
+			<div class="container">
+			<h1>Contact Us</h1>
+
+			<div class="container" align="left">
+				<form class="form-group">
+			    	<div class="form-group">
+			      		<label for="inputEmail4">Email</label>
+			     	 	<input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+			    	</div>
+			    	<div class="form-group">
+			      		<label for="contact">Contact</label>
+			      		<textarea class="form-control" cols="" rows="8"></textarea>
+			    	</div>
+				  	<div class="form-group">
+				  		<button type="submit" class="btn btn-outline-primary">Send</button>
+				  	</div>
+				</form>
+			</div>
+
+		    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3239.481465006594!2d139.70993211525962!3d35.714375880186594!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188d160506a0c3%3A0xf5373a6d5e6cd8f8!2z44CSMTY5LTAwNTEg5p2x5Lqs6YO95paw5a6_5Yy66KW_5pep56iy55Sw77yT5LiB55uu77yT77yR4oiS77yR77yR!5e0!3m2!1sja!2sjp!4v1621304966559!5m2!1sja!2sjp" width="1000" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+		   
+		    <address>New Life Bld; 4F, Nishi-Waseda 3-31-11<br>
+		        Shinjuku-ku,Tokyo
+		        169-0051 Japan<br>
+		        03-1234-5632</address>
+			</div>
+	</div>
+	
+
+
+		<!-- Start Video Section -->
+	<section id="footer">
+		<div class="container-fluid">
+			<div class="footer">
+				<p><b><strong>&copy;</strong>copyright </b> Hkun Htoo Aung </p>
+			</div>
+		</div>
+	</section>
+	<!-- End Video Section -->
+
+
+
+
+<!-- script -->
+<script>
+//Get the button
+var mybutton = document.querySelector("#myBtn");
+// When the user scrolls down 50px from the top of the document, resize the header's font size
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+    document.getElementById("header").style.fontSize = "17px";
+    document.getElementById("header").style.paddingTop = "0px";
+    document.getElementById("header").style.paddingBottom = "0px";
+    document.getElementById("header").style.transition = "0.5s";
+    
+    // document.getElementById("header").style.fontSize = "20px";
+  } else {
+    document.getElementById("header").style.fontSize = "17px";
+    document.getElementById("header").style.paddingTop = "15px";
+    document.getElementById("header").style.paddingBottom = "15px";
+  }
+
+  if (document.body.scrollTop > 30 || document.documentElement.scrollTop > 30) {
+    mybutton.style.opacity = "100%";
+
+  } else {
+    mybutton.style.opacity = "0%";
+  }
+
+
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+</script>
+</body>
+</html>
