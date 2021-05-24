@@ -1,3 +1,9 @@
+<?php 
+require 'config/config.php';
+$stmt = $pdo->prepare("SELECT * FROM news ORDER BY id DESC");
+$stmt->execute();
+$result = $stmt->fetchAll();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -92,12 +98,13 @@
 
                     <!--Grid row-->
                     <div class="row">
-
-                        <!--Grid column-->
-                        <div class="col-lg-4 mb-4">
+                        <?php 
+                        foreach ($result as $value) { ?>
+                            <!--Grid column-->
+                        <div class="col-lg-3 mb-4">
                             <!--Featured image-->
                             <div class="view overlay z-depth-1">
-                                <a href="newdetail.html"><img src="images/seulgi3.jpg" class="img-fluid" alt="News" style="height: 350px; width: 100%;"></a>
+                                <a href="newdetail.html"><img src="images/<?php echo $value['image'] ?>" class="img-fluid" alt="News" style="height:290px; width: 100%;"></a>
                                
                             </div>
                         </div>
@@ -109,7 +116,7 @@
 
                             <h6 class="mb-3 dark-grey-text mt-0">
                                 <strong>
-                                    <a href="new.html"><b><p class="dark-grey-text">KMD Computer & Mobile ဆိုင်ခွဲသစ်များ ဖွင့်လှစ်ပြီးပါကြောင်း သတင်းကောင်း</p></b></a>
+                                    <a href="new.html"><b><p class="dark-grey-text"><?php echo $value['title']; ?></p></b></a>
                                 </strong>
                             </h6>
                             <!--Grid row-->
@@ -119,7 +126,7 @@
                                 <div class="col-xl-2 col-md-6 text-sm-center text-md-right text-lg-left">
                                     <p class="red-text font-small font-weight-bold mb-1 spacing">
                                         <a>
-                                            <strong>Events</strong>
+                                            <strong>Date ::</strong>
                                         </a>
                                     </p>
                                 </div>
@@ -128,7 +135,7 @@
                                 <!--Grid column-->
                                 <div class="col-xl-5 col-md-6 text-sm-center text-md-left">
                                     <p class="font-small grey-text">
-                                        <em> Dec 30, 2019</em>
+                                        <em> <?php echo date('d-M-Y h:m:s', strtotime($value['created_at'])) ?></em>
                                     </p>
                                 </div>
                                 <!--Grid column-->
@@ -136,16 +143,17 @@
                             </div>
                             <!--Grid row-->
                             <p class="dark-grey-text">
-                                KMD Computer & Mobile ရဲ့ ရန်ကင်းမြို့နယ် ဆိုင်ခွဲသစ်ကို 14.3.2019  ရက်နေ့မှာ လည်းကောင်း၊  လှိုင်သာယာမြို့နယ် ဆိုင်ခွဲသစ်ကို 31.Jan.2019  ရက်နေ့မှာ လည်းကောင်း နှင့်  မြောက်ဥက္ကလာပနယ် ဆိုင်ခွဲသစ်ကို 23.Nov.2018  ရက်နေ့မှာ လည်းကောင်း အောင်မြင်စွာ ဖွင့်လှစ်လိုက်ပြီးဖြစ်ပါကြောင်း သတင်းကောင်းပါးလိုက်ပါတယ်။
+                               <?php echo substr($value['description'], 0,700); ?>
                             </p>
 
                             <!--Deep-orange-->
                             <a href="newdetail.html" class="btn btn-danger btn-rounded btn-sm waves-effect waves-light">Read more</a>
                         </div>
                         <!--Grid column-->
-
-                        </div>
-                        <!--Grid row-->
+                        <?php }
+                        ?>
+                    </div>
+                    <!--Grid row-->
 
                         <hr class="mb-5">
 
